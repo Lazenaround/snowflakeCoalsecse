@@ -22,6 +22,7 @@ config:
       "APINode",
       "JDBCLoad"
     ]%}
+    {# trigger refresh #}
 fileVersion: 1
 id: "@coalesce/snowflake/external-data-package"
 name: EDP
