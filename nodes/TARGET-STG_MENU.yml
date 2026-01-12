@@ -1,0 +1,138 @@
+fileVersion: 1
+id: 1d8179c4-ba5c-475f-b8fe-39574354999b
+name: STG_MENU
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b870ccf-92cd-4622-b8f8-4c019bca2f52
+          stepCounter: 1d8179c4-ba5c-475f-b8fe-39574354999b
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MENU_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f936b406-cb2c-48cc-8d10-025938bac12d
+                stepCounter: ae6a6b43-9ef0-46d2-a775-e6cb953aa661
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9990173-ddbd-4b0f-9501-bda3c9637b84
+          stepCounter: 1d8179c4-ba5c-475f-b8fe-39574354999b
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MENU_ITEM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f4e93b1-8061-49bc-b184-514433ca9c21
+                stepCounter: ae6a6b43-9ef0-46d2-a775-e6cb953aa661
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 41736fea-a016-4f49-9c14-2aa06e055c69
+          stepCounter: 1d8179c4-ba5c-475f-b8fe-39574354999b
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: ITEM_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b2bb200c-6bc0-4282-a791-c963585bed53
+                stepCounter: ae6a6b43-9ef0-46d2-a775-e6cb953aa661
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27785c8e-ed45-4e81-be91-ef99ed74b86c
+          stepCounter: 1d8179c4-ba5c-475f-b8fe-39574354999b
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: ITEM_CATEGORY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 869fd4b2-b690-415e-a628-25e35da16014
+                stepCounter: ae6a6b43-9ef0-46d2-a775-e6cb953aa661
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1f9a774-54b8-4e41-aad9-4ec49abb6af9
+          stepCounter: 1d8179c4-ba5c-475f-b8fe-39574354999b
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: ITEM_SUBCATEGORY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d139b468-021d-4c92-8340-20b3de141f57
+                stepCounter: ae6a6b43-9ef0-46d2-a775-e6cb953aa661
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aeff9fe5-8b09-4dc8-a80e-75599cd58aa2
+          stepCounter: 1d8179c4-ba5c-475f-b8fe-39574354999b
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: INGREDIENTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 35bbe621-a20e-4857-bbe1-b028fa5f7702
+                stepCounter: ae6a6b43-9ef0-46d2-a775-e6cb953aa661
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8ab629b8-4ab1-4aec-939e-64e0492d94e8
+          stepCounter: 1d8179c4-ba5c-475f-b8fe-39574354999b
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: COST_TO_MAKE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19b656b8-611d-4557-b5c9-1e76fad5ffea
+                stepCounter: ae6a6b43-9ef0-46d2-a775-e6cb953aa661
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          MENU: ae6a6b43-9ef0-46d2-a775-e6cb953aa661
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STORE
+            nodeName: MENU
+        join:
+          joinCondition: FROM {{ ref('STORE', 'MENU') }} "MENU"
+        name: STG_MENU
+        noLinkRefs: []
+  name: STG_MENU
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

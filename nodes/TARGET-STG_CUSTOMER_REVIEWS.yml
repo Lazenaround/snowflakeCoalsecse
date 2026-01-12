@@ -1,0 +1,117 @@
+fileVersion: 1
+id: 1c804c79-2f81-4c08-95a1-34352d7ddef1
+name: STG_CUSTOMER_REVIEWS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30b0c859-5b6b-4948-8f48-700e0ac10be5
+          stepCounter: 1c804c79-2f81-4c08-95a1-34352d7ddef1
+        config: {}
+        dataType: DOUBLE
+        description: ""
+        name: CUSTOMER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "\"SRC\".value:\"customer_id\"::DOUBLE"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2b943fab-73db-4879-80ff-2391d8a2027c
+          stepCounter: 1c804c79-2f81-4c08-95a1-34352d7ddef1
+        config: {}
+        dataType: STRING
+        description: ""
+        name: REVIEW_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "\"SRC\".value:\"review_date\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6637a40-b79a-489b-9d24-7fe84fb36cfe
+          stepCounter: 1c804c79-2f81-4c08-95a1-34352d7ddef1
+        config: {}
+        dataType: DOUBLE
+        description: ""
+        name: REVIEW_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "\"SRC\".value:\"review_id\"::DOUBLE"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86e13fed-5f52-44fc-b304-3a26363496b5
+          stepCounter: 1c804c79-2f81-4c08-95a1-34352d7ddef1
+        config: {}
+        dataType: STRING
+        description: ""
+        name: REVIEW_TEXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "\"SRC\".value:\"review_text\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c1e0137-d300-4b5a-a5ca-dba8450f49f4
+          stepCounter: 1c804c79-2f81-4c08-95a1-34352d7ddef1
+        config: {}
+        dataType: DOUBLE
+        description: ""
+        name: STAR_RATING
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "\"SRC\".value:\"star_rating\"::DOUBLE"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          CUSTOMER_REVIEWS: 3012821b-c41e-433e-8574-4410c685da54
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: CUSTOMER_REVIEWS
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'CUSTOMER_REVIEWS') }} "CUSTOMER_REVIEWS", 
+            lateral flatten(input => "SRC", OUTER => TRUE) "SRC"
+        name: STG_CUSTOMER_REVIEWS
+        noLinkRefs: []
+  name: STG_CUSTOMER_REVIEWS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

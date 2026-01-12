@@ -1,10 +1,37 @@
 config:
   entities:
     nodeTypes:
-      "606":
+      "298":
         defaultStorageLocation: null
         isDisabled: false
-  packageVariables: |-
+      "299":
+        defaultStorageLocation: null
+        isDisabled: false
+      "302":
+        defaultStorageLocation: null
+        isDisabled: false
+      "303":
+        defaultStorageLocation: null
+        isDisabled: false
+      "323":
+        defaultStorageLocation: null
+        isDisabled: false
+      "324":
+        defaultStorageLocation: null
+        isDisabled: false
+      "327":
+        defaultStorageLocation: null
+        isDisabled: false
+      "346":
+        defaultStorageLocation: null
+        isDisabled: false
+      "347":
+        defaultStorageLocation: null
+        isDisabled: false
+      "372":
+        defaultStorageLocation: null
+        isDisabled: false
+  packageVariables: |
     {#-------------------------------------------------------------------------------------------------------------#}
     {#-- Global configs of external data package                                                               --#}
     {#--                                                                                                         --#}
@@ -12,20 +39,9 @@ config:
     {#-------------------------------------------------------------------------------------------------------------#}
 
     {%set SP_configs = namespace(py_runtime_ver="3.9",java_runtime_ver="11")%}
-    {%set enabled_nodes = [
-      "CopyInto",
-      "Snowpipe",
-      "ExternalTable",
-      "InferSchema",
-      "CopyUnload",
-      "ParseExcel",
-      "APINode",
-      "JDBCLoad"
-    ]%}
-    {# trigger refresh #}
 fileVersion: 1
 id: "@coalesce/snowflake/external-data-package"
 name: EDP
 packageID: "@coalesce/snowflake/external-data-package"
-releaseID: 00e29ddd-8da3-4dec-aa67-cbd4a523772e
+releaseID: 324dfed8-88c0-4d5c-9ba9-e1330ab0f4a1
 type: Package

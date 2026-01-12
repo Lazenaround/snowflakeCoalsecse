@@ -1,0 +1,184 @@
+fileVersion: 1
+id: 3012821b-c41e-433e-8574-4410c685da54
+name: CUSTOMER_REVIEWS
+operation:
+  config:
+    binformat: HEX
+    bytemark: true
+    columnmismatch: false
+    compression: ""
+    dateformat: ""
+    ddlCaseInsensitive: false
+    emptyfield: true
+    encoding: UTF8
+    enforceLength: ""
+    errornumber: ""
+    escapeenclosed: \134
+    escapeval: ""
+    externalURI: Enter external URI-Ex:s3://snowflake-docs
+    extlocation: false
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: STORE
+    fileFormatName: JSONFORMAT
+    fileFormatType: File Format Name
+    fileNames: customer_reviews.json
+    filePattern: ""
+    fileType: JSON
+    forceLoad: ""
+    inferschema: false
+    intextstage: true
+    loadUncertainFiles: ""
+    mulline: true
+    nullchar: ('\N')
+    onError: ""
+    parsehdr: true
+    parsehdr1: true
+    purgeBehavior: ""
+    recDelim: |+
+
+    replaceinvalidcharacters: true
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
+    skipHeader: "1"
+    stageName: STORE_DATA
+    stageStorageLocationName: STORE
+    storageintegration: ""
+    stripouterarray: true
+    subfolder: json
+    timeformat: ""
+    timestampformat: ""
+    trimSpace: false
+    truncateBefore: false
+    truncateColumns: ""
+    usevectscan: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 957b6cc9-95b2-49cf-93e1-9b1eda6c7fcb
+          stepCounter: 3012821b-c41e-433e-8574-4410c685da54
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: $1
+        sysJSON: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a2e3a45-98d6-4510-8037-9315b96940a3
+          stepCounter: 3012821b-c41e-433e-8574-4410c685da54
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+        sysLdTs: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d444942-d111-4f66-a4cd-ac262ce0efcf
+          stepCounter: 3012821b-c41e-433e-8574-4410c685da54
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+        sysFlNm: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ff14694-6b7f-497e-a853-b32990cd6a2d
+          stepCounter: 3012821b-c41e-433e-8574-4410c685da54
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_ROW_NUMBER
+        sysFlRwNm: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5a8772f-bad6-4c47-a8f2-b1c2c5b4bb83
+          stepCounter: 3012821b-c41e-433e-8574-4410c685da54
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_LAST_MODIFIED
+        sysFlLtMd: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a15a2fc9-4b53-4610-b6f8-1886f9cb7f8c
+          stepCounter: 3012821b-c41e-433e-8574-4410c685da54
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$START_SCAN_TIME
+        sysFlScTm: true
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: CUSTOMER_REVIEWS
+        noLinkRefs: []
+  name: CUSTOMER_REVIEWS
+  overrideSQL: false
+  schema: ""
+  sqlType: EDP:::324
+  type: sql
+  version: 1
+type: Node

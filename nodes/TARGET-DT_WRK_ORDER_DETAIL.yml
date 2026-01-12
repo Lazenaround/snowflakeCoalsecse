@@ -1,0 +1,165 @@
+fileVersion: 1
+id: 5a209527-e20e-4897-b996-c6586edcad76
+name: DT_WRK_ORDER_DETAIL
+operation:
+  config:
+    advanceWarehouse: false
+    backfill: false
+    backfillSource: ""
+    backfillSourceSchema: ""
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    cpygrants: false
+    downstreamOption: true
+    groupByAll: false
+    immutabilityConstraint: false
+    immutableExpression: ""
+    initialize: ON_CREATE
+    initializeWarehouseSize: ""
+    insertStrategy: UNION ALL
+    lagSpecification:
+      items:
+        - lagPeriod: Minutes
+          lagValue: "60"
+    refreshWarehouseSize: ""
+    refresh_mode: AUTO
+    selectDistinct: true
+    timeTravel: false
+    timeTravelreference: ""
+    timeTraveltype: ""
+    timeTravelvalue: ""
+    warehouseName: COMPUTE_WH
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 22539c95-b3a1-404c-8551-2aea0db4d1e8
+          stepCounter: 5a209527-e20e-4897-b996-c6586edcad76
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ORDER_DETAIL_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1fa48c58-ce14-45f1-8f8b-3d5b321807f2
+                stepCounter: ed0503a2-5b9f-47c6-9ae4-dc355b814d6a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b7bffd1e-0a49-469a-aa65-6a5a4458653b
+          stepCounter: 5a209527-e20e-4897-b996-c6586edcad76
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ORDER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d51a9df6-dc02-445d-970a-2f19989eaab1
+                stepCounter: ed0503a2-5b9f-47c6-9ae4-dc355b814d6a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c42ab7a-bd68-4488-98fb-8809a6712518
+          stepCounter: 5a209527-e20e-4897-b996-c6586edcad76
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MENU_ITEM_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 28a49d0e-24bf-4033-860f-2505f525fa52
+                stepCounter: ed0503a2-5b9f-47c6-9ae4-dc355b814d6a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1cb95cea-9d75-4d5e-8436-5fea1380418c
+          stepCounter: 5a209527-e20e-4897-b996-c6586edcad76
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: ITEM_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 596f8a2e-da16-4af4-b330-ba7bed9e3534
+                stepCounter: ed0503a2-5b9f-47c6-9ae4-dc355b814d6a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae64f802-c324-4e6c-8fff-23b6fe1d9334
+          stepCounter: 5a209527-e20e-4897-b996-c6586edcad76
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: QUANTITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f4c0ee5e-78ea-4527-a7ac-76793ee70514
+                stepCounter: ed0503a2-5b9f-47c6-9ae4-dc355b814d6a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a13591da-9014-4b95-8ef9-ead024a0c072
+          stepCounter: 5a209527-e20e-4897-b996-c6586edcad76
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: PRICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0f46f86f-f9c6-4997-82e1-d506c0848210
+                stepCounter: ed0503a2-5b9f-47c6-9ae4-dc355b814d6a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2c548ac-f432-470c-826f-4098aedcd45d
+          stepCounter: 5a209527-e20e-4897-b996-c6586edcad76
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: DISCOUNT_AMOUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1cdd9b27-aed6-4ef8-88e0-34db5cb8541a
+                stepCounter: ed0503a2-5b9f-47c6-9ae4-dc355b814d6a
+            transform: CASE WHEN "ORDER_DETAIL"."DISCOUNT_AMOUNT" > 50 THEN 10 ELSE 1 END
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ORDER_DETAIL: ed0503a2-5b9f-47c6-9ae4-dc355b814d6a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: STORE
+            nodeName: ORDER_DETAIL
+        join:
+          joinCondition: FROM {{ ref('STORE', 'ORDER_DETAIL') }} "ORDER_DETAIL"
+        name: DT_WRK_ORDER_DETAIL
+        noLinkRefs: []
+  name: DT_WRK_ORDER_DETAIL
+  overrideSQL: false
+  schema: ""
+  sqlType: Dynamic-Tables:::347
+  type: sql
+  version: 1
+type: Node
